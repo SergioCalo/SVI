@@ -1,0 +1,29 @@
+# S (total states)
+# F (fact): [fact ID] [name]
+# G (goal state): [goal state ID] [fact ID 1] [fact ID 2] ...
+# N (non-goal state): [non-goal state ID] [fact ID 1] [fact ID 2] ...
+# T (transition): [source state ID] [target state ID]
+# The initial state has ID 0.
+S 6
+F 0 at-ferry(loc1)
+F 1 at-ferry(loc2)
+F 2 empty-ferry()
+F 3 at(car1, loc1)
+F 4 at(car1, loc2)
+F 5 on(car1)
+N 0 0 2 3
+T 0 1
+T 0 2
+N 1 1 2 3
+T 1 0
+N 2 0 5
+T 2 3
+T 2 0
+N 3 1 5
+T 3 2
+T 3 4
+G 4 1 2 4
+T 4 5
+T 4 3
+G 5 0 2 4
+T 5 4

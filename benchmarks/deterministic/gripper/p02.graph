@@ -1,0 +1,123 @@
+# S (total states)
+# F (fact): [fact ID] [name]
+# G (goal state): [goal state ID] [fact ID 1] [fact ID 2] ...
+# N (non-goal state): [non-goal state ID] [fact ID 1] [fact ID 2] ...
+# T (transition): [source state ID] [target state ID]
+# The initial state has ID 0.
+S 28
+F 0 at-robby(rooma)
+F 1 at-robby(roomb)
+F 2 free(left)
+F 3 free(right)
+F 4 at(ball1, rooma)
+F 5 at(ball1, roomb)
+F 6 carry(ball1, left)
+F 7 carry(ball1, right)
+F 8 at(ball2, rooma)
+F 9 at(ball2, roomb)
+F 10 carry(ball2, left)
+F 11 carry(ball2, right)
+N 0 0 2 3 4 8
+T 0 1
+T 0 2
+T 0 3
+T 0 4
+T 0 5
+N 1 1 2 3 4 8
+T 1 0
+N 2 0 3 6 8
+T 2 6
+T 2 7
+T 2 0
+N 3 0 3 4 10
+T 3 8
+T 3 9
+T 3 0
+N 4 0 2 7 8
+T 4 10
+T 4 9
+T 4 0
+N 5 0 2 4 11
+T 5 11
+T 5 7
+T 5 0
+N 6 1 3 6 8
+T 6 2
+T 6 12
+N 7 0 6 11
+T 7 13
+T 7 5
+T 7 2
+N 8 1 3 4 10
+T 8 3
+T 8 14
+N 9 0 7 10
+T 9 15
+T 9 3
+T 9 4
+N 10 1 2 7 8
+T 10 4
+T 10 12
+N 11 1 2 4 11
+T 11 5
+T 11 14
+N 12 1 2 3 5 8
+T 12 16
+T 12 6
+T 12 10
+N 13 1 6 11
+T 13 7
+T 13 17
+T 13 18
+N 14 1 2 3 4 9
+T 14 19
+T 14 8
+T 14 11
+N 15 1 7 10
+T 15 9
+T 15 20
+T 15 21
+N 16 0 2 3 5 8
+T 16 12
+T 16 22
+T 16 23
+N 17 1 2 5 11
+T 17 23
+T 17 13
+T 17 24
+N 18 1 3 6 9
+T 18 25
+T 18 13
+T 18 24
+N 19 0 2 3 4 9
+T 19 14
+T 19 25
+T 19 26
+N 20 1 3 5 10
+T 20 22
+T 20 15
+T 20 24
+N 21 1 2 7 9
+T 21 26
+T 21 15
+T 21 24
+N 22 0 3 5 10
+T 22 20
+T 22 16
+N 23 0 2 5 11
+T 23 17
+T 23 16
+G 24 1 2 3 5 9
+T 24 27
+T 24 18
+T 24 20
+T 24 21
+T 24 17
+N 25 0 3 6 9
+T 25 18
+T 25 19
+N 26 0 2 7 9
+T 26 21
+T 26 19
+G 27 0 2 3 5 9
+T 27 24

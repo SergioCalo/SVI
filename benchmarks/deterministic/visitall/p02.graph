@@ -1,0 +1,68 @@
+# S (total states)
+# F (fact): [fact ID] [name]
+# G (goal state): [goal state ID] [fact ID 1] [fact ID 2] ...
+# N (non-goal state): [non-goal state ID] [fact ID 1] [fact ID 2] ...
+# T (transition): [source state ID] [target state ID]
+# The initial state has ID 0.
+S 18
+F 0 at-robot(loc-x0-y0)
+F 1 at-robot(loc-x0-y1)
+F 2 at-robot(loc-x1-y0)
+F 3 at-robot(loc-x1-y1)
+F 4 visited(loc-x1-y1)
+F 5 visited(loc-x1-y0)
+F 6 visited(loc-x0-y0)
+N 0 1
+T 0 1
+T 0 2
+N 1 0 6
+T 1 3
+T 1 4
+N 2 3 4
+T 2 5
+T 2 6
+N 3 1 6
+T 3 1
+T 3 7
+N 4 2 5 6
+T 4 8
+T 4 9
+N 5 1 4
+T 5 10
+T 5 2
+N 6 2 4 5
+T 6 11
+T 6 12
+N 7 3 4 6
+T 7 13
+T 7 14
+N 8 0 5 6
+T 8 15
+T 8 4
+G 9 3 4 5 6
+T 9 16
+T 9 14
+N 10 0 4 6
+T 10 13
+T 10 14
+G 11 0 4 5 6
+T 11 16
+T 11 14
+N 12 3 4 5
+T 12 17
+T 12 6
+N 13 1 4 6
+T 13 10
+T 13 7
+G 14 2 4 5 6
+T 14 11
+T 14 9
+N 15 1 5 6
+T 15 8
+T 15 9
+G 16 1 4 5 6
+T 16 11
+T 16 9
+N 17 1 4 5
+T 17 11
+T 17 12

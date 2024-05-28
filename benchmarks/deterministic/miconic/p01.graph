@@ -1,0 +1,26 @@
+# S (total states)
+# F (fact): [fact ID] [name]
+# G (goal state): [goal state ID] [fact ID 1] [fact ID 2] ...
+# N (non-goal state): [non-goal state ID] [fact ID 1] [fact ID 2] ...
+# T (transition): [source state ID] [target state ID]
+# The initial state has ID 0.
+S 6
+F 0 lift-at(f1)
+F 1 lift-at(f2)
+F 2 boarded(p1)
+F 3 origin(p1, f1)
+F 4 served(p1)
+N 0 1 3
+T 0 1
+N 1 0 3
+T 1 0
+T 1 2
+N 2 0 2
+T 2 3
+N 3 1 2
+T 3 2
+T 3 4
+G 4 1 4
+T 4 5
+G 5 0 4
+T 5 4
