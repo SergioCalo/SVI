@@ -4,18 +4,16 @@ This repository contains the code associated with the paper "Bisimulation Metric
 
 ## Getting Started
 
-### Cloning the Repository
-
-To get started, clone the repository to your local machine using the following command:
-
-`git clone git@github.com:SergioCalo/SVI.git`
 
 ### Installing Requirements
 Make sure you have Python installed on your system. It's recommended to use a virtual environment to manage dependencies. You can install the required packages using pip:
 
 `python -m venv venv`
+
 `source venv/bin/activate`
+
 `pip install -r requirements.txt`
+
 `pip install -e .`
 
 ### Testing the Installation
