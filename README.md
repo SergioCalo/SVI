@@ -13,7 +13,10 @@ To get started, clone the repository to your local machine using the following c
 ### Installing Requirements
 Make sure you have Python installed on your system. It's recommended to use a virtual environment to manage dependencies. You can install the required packages using pip:
 
+`python -m venv venv`
+`source venv/bin/activate`
 `pip install -r requirements.txt`
+`pip install -e .`
 
 ### Testing the Installation
 To verify that everything is set up correctly, you can run the tests included in the repository:
